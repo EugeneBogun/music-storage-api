@@ -4,7 +4,7 @@ import (
     "gopkg.in/mgo.v2/bson"
     "gopkg.in/mgo.v2"
     "fmt"
-    "bitbucket.org/ebogun/music-storage/components"
+    "github.com/eugenebogun/music-storage/components"
 )
 
 type User struct {

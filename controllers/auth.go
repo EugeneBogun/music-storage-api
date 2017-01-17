@@ -3,10 +3,10 @@ package controllers
 import (
     "net/http"
     "github.com/julienschmidt/httprouter"
-    "bitbucket.org/ebogun/music-storage/components"
+    "github.com/eugenebogun/music-storage/components"
     valid "github.com/asaskevich/govalidator"
     "gopkg.in/mgo.v2/bson"
-    "bitbucket.org/ebogun/music-storage/models"
+    "github.com/eugenebogun/music-storage/models"
 )
 
 type RegistrationForm struct {
