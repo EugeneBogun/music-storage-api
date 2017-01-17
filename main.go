@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/eugenebogun/music-storage/controllers"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
@@ -14,4 +15,5 @@ func main() {
 	if err != nil {
 		panic("ListenAndServe: " + err.Error())
 	}
+	fmt.Println("Server is started.")
 }

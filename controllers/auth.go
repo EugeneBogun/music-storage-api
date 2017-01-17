@@ -9,13 +9,13 @@ import (
 	"net/http"
 )
 
-// Registration form with validation rules.
+// RegistrationForm is registration form struct with validation rules.
 type RegistrationForm struct {
 	Email    string `valid:"email,required"`
 	Password string `valid:"alphanum,length(6|50),required"`
 }
 
-// User response with user as response attribute.
+// UserResponse is response struct with user as response attribute.
 type UserResponse struct {
 	User models.User `json:"user"`
 }
@@ -24,12 +24,12 @@ func init() {
 	valid.SetFieldsRequiredByDefault(true)
 }
 
-// Handle registration request function.
+// HandleRegistration handle registration request.
 // Using registration form struct for validation registration form data.
 // In case success validation create new user.
 func HandleRegistration(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	registrationForm := &RegistrationForm{
-		Email:    r.FormValue("email"),
+
+	registrationForm := &RegistrationForm{Email: r.FormValue("email"),
 		Password: r.FormValue("password"),
 	}
 

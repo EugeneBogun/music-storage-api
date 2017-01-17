@@ -11,7 +11,7 @@ type Response struct {
 	Message string `json:"message"`
 }
 
-// Send response in json format.
+// SendResponse send response in json format.
 func SendResponse(w http.ResponseWriter, r interface{}, status int) {
 	jsonMessage, err := json.Marshal(r)
 	if err != nil {
@@ -24,7 +24,7 @@ func SendResponse(w http.ResponseWriter, r interface{}, status int) {
 	w.Write(jsonMessage)
 }
 
-// Send response with error status.
+// SendErrorResponse send response with error status.
 func SendErrorResponse(w http.ResponseWriter, m string) {
 	response := Response{
 		Status:  "Error",
@@ -33,7 +33,7 @@ func SendErrorResponse(w http.ResponseWriter, m string) {
 	SendResponse(w, response, http.StatusBadRequest)
 }
 
-// Send response with success status.
+// SendSuccessResponse send response with success status.
 func SendSuccessResponse(w http.ResponseWriter, m string) {
 	response := Response{
 		Status:  "Success",

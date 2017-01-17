@@ -1,4 +1,4 @@
 package components
 
-// Application database name.
+// DbName is application database name.
 var DbName = "music-storage"
